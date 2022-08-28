@@ -35,4 +35,5 @@ The backend code for Fluent application.
 
 ## Additional Informations
 
-This project will use [Convetional commits](https://www.conventionalcommits.org/en/v1.0.0/) for its commit messages.
+This project will use [Convetional commits](https://www.conventionalcommits.org/en/v1.0.0/) for its commit messages.  
+Inspired by [Justin's Video](https://www.youtube.com/watch?v=OJqUWvmf4gg), I would like to find a dotnet tool to make automatic change logs.
