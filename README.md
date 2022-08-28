@@ -14,7 +14,8 @@
 
 The backend code for Fluent application.
 
-As this project is intended to be managed only by me and I want to improve my git knowledge, I will use the gitflow branching model in this project. [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) In order to practice a more modern way to use git branching feature, I certainly will use trunk based workflow in the frontend part of this project.
+As this project is intended to be managed only by me and I want to improve my git knowledge, I will use the gitflow branching model in this project. [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)  
+In order to practice a more modern way to use git branching feature, I certainly will use trunk based workflow in the frontend part of this project.
 
 ## Project Structure
 
