@@ -1,6 +1,7 @@
 using Fluent.Models;
 
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace Fluent.Data;
 
@@ -11,6 +12,6 @@ public class FluentContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer(@"Database URL");
+        optionsBuilder.UseSqlServer(@"Server=localhost;User Id=sa;Password=P@ssw0rd;Initial Catalog=Fluent");
     }
 }
