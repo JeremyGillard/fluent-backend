@@ -11,6 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Fluent.Common.DataContext\Fluent.Common.DataContext.csproj" />
     <ProjectReference Include="..\Fluent.Common.EntityModels\Fluent.Common.EntityModels.csproj" />
+    <ProjectReference Include="..\Fluent.Service.External.Translator\Fluent.Service.External.Translator.csproj" />
   </ItemGroup>
 
   <ItemGroup>
