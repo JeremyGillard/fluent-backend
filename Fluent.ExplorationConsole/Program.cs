@@ -1,28 +1,27 @@
-﻿// using Microsoft.Extensions.Configuration;
+﻿using Cocona;
 
-// IConfigurationRoot configuration = new ConfigurationBuilder()
-//     .AddUserSecrets<Program>()
-//     .Build();
-// string connectionString = configuration.GetConnectionString("FluentDatabase");
-// Console.WriteLine(connectionString);
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Configuration;
 
-using Fluent.Data;
-using Fluent.Models;
+using Fluent.Service.Translator;
+using Fluent.Service.Translator.Models;
 
-using FluentContext context = new FluentContext();
+var builder = CoconaApp.CreateBuilder();
 
-FlashCard hello = new FlashCard()
+builder.Configuration.AddUserSecrets<Program>();
+builder.Services.Configure<TranslatorOptions>(builder.Configuration.GetSection(TranslatorOptions.Translator));
+builder.Services.AddTranslator();
+
+var app = builder.Build();
+
+app.AddCommand("translate", async (string word, ITranslatorService translator, ILogger<Program> logger) =>
 {
-    Word = "Hello",
-    Translation = "Bonjour"
-};
-context.FlashCards.Add(hello);
+    var translations = await translator.GetTranslations(word);
+    for (int i = 0; i < translations?.Values.Count; i++)
+    {
+        logger.LogInformation(translations?.Values[i].Text);
+    }
+});
 
-FlashCard hi = new FlashCard()
-{
-    Word = "Hi",
-    Translation = "Salut"
-};
-context.Add(hi);
-
-context.SaveChanges();
+app.Run();

@@ -11,11 +11,19 @@
   <ItemGroup>
     <ProjectReference Include="..\Fluent.Common.DataContext\Fluent.Common.DataContext.csproj" />
     <ProjectReference Include="..\Fluent.Common.EntityModels\Fluent.Common.EntityModels.csproj" />
+    <ProjectReference Include="..\Fluent.Service.External.Translator\Fluent.Service.External.Translator.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Cocona" Version="2.0.3" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="6.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="6.0.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0" />
   </ItemGroup>
 
 </Project>
