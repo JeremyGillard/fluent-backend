@@ -10,6 +10,7 @@ using Fluent.Service.Translator.Models;
 var builder = CoconaApp.CreateBuilder();
 
 builder.Configuration.AddUserSecrets<Program>();
+builder.Services.AddTransient<HttpClient>();
 builder.Services.Configure<TranslatorOptions>(builder.Configuration.GetSection(TranslatorOptions.Translator));
 builder.Services.AddTranslator();
 
