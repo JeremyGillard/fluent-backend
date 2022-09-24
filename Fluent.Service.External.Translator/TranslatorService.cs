@@ -12,11 +12,11 @@ public class TranslatorService : ITranslatorService
     private readonly TranslatorOptions _options;
     private readonly HttpClient _httpClient;
 
-    public TranslatorService(ILogger<TranslatorService> logger, IOptions<TranslatorOptions> options)
+    public TranslatorService(ILogger<TranslatorService> logger, HttpClient httpClient, IOptions<TranslatorOptions> options)
     {
         _logger = logger;
         _options = options.Value;
-        _httpClient = new HttpClient();
+        _httpClient = httpClient;
     }
 
     public async Task<Translations?> GetTranslations(string word)
