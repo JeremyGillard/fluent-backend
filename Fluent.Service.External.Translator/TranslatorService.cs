@@ -19,11 +19,12 @@ public class TranslatorService : ITranslatorService
         _httpClient = httpClient;
     }
 
-    public async Task<Translations?> GetTranslations(string word)
+    public async Task<Translations?> GetTranslations(string word, Lang targetTranslationLanguage)
     {
         var parameters = new Dictionary<string, string> { { "auth_key", _options.AuthKey },
                                                     { "text", word },
-                                                    { "target_lang", "FR" }};
+                                                    { "target_lang", $"{targetTranslationLanguage}" }};
+        _logger.LogInformation($"Target language: {targetTranslationLanguage}");
         var encodedContent = new FormUrlEncodedContent(parameters);
         var response = await _httpClient.PostAsync(_options.ApiUri, encodedContent).ConfigureAwait(false);
         response.EnsureSuccessStatusCode();
